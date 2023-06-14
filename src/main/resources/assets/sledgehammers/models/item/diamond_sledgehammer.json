@@ -1,0 +1,7 @@
+{
+  "parent": "sledgehammers:item/base_sledgehammer",
+  "textures": {
+    "0": "sledgehammers:item/diamond_sledgehammer",
+    "particle": "sledgehammers:item/diamond_sledgehammer"
+  }
+}
