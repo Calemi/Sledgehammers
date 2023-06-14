@@ -16,15 +16,39 @@ public class SledgehammersConfig {
 
     public static class CategoryServer {
 
-        public final ForgeConfigSpec.ConfigValue<Integer> maxVeinMineSize;
+        public final ForgeConfigSpec.ConfigValue<Boolean> chargeAbilities;
+        public final ForgeConfigSpec.ConfigValue<Boolean> excavateAbility;
+        public final ForgeConfigSpec.ConfigValue<Boolean> veinMineAbility;
+        public final ForgeConfigSpec.ConfigValue<Boolean> fellTreeAbility;
+        public final ForgeConfigSpec.ConfigValue<Integer> maxBlockBreakSize;
 
         public final ForgeConfigSpec.ConfigValue<Integer> starlightUpgradeSpawnChance;
         public final ForgeConfigSpec.ConfigValue<Integer> starlightUpgradeSpawnAmount;
 
         public CategoryServer (ForgeConfigSpec.Builder builder) {
 
-            maxVeinMineSize = builder.comment("Max Vein Mine Size")
-                    .comment("The max amount of Blocks to break when charging a Sledgehammer.")
+            chargeAbilities = builder.comment("Charge Abilities")
+                    .comment("Enables the ability to charge up the Sledgehammer by using it.")
+                    .comment("When releasing can excavate, vein mine ores, and fell trees.")
+                    .define("chargeAbilities", true);
+
+            excavateAbility = builder.comment("Excavate Ability")
+                    .comment("Enables the ability to excavate using a Sledgehammer.")
+                    .comment("This ability destroys a 3x3 flat cube (by default) of blocks.")
+                    .define("excavateAbility", true);
+
+            veinMineAbility = builder.comment("Vein Mine Ability")
+                    .comment("Enables the ability to vein mine ores using a Sledgehammer.")
+                    .comment("This ability destroys all connected ores.")
+                    .define("veinMineAbility", true);
+
+            fellTreeAbility = builder.comment("Fell Tree Ability")
+                    .comment("Enables the ability to fell trees using a Sledgehammer.")
+                    .comment("This ability destroys all connected logs.")
+                    .define("fellTreeAbility", true);
+
+            maxBlockBreakSize = builder.comment("Max Vein Mine Size")
+                    .comment("The maximum amount of blocks that a Sledgehammer can break at once using the charge ability.")
                     .defineInRange("maxVeinMineSize", 64, 0, 1024);
 
             starlightUpgradeSpawnChance = builder.comment("Starlight Upgrade Spawn Chance")

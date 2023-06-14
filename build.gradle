@@ -163,7 +163,7 @@ curseforge {
         }
 
         relations {
-            requiredDependency 'calemi-core'
+            requiredDependency 'ccore'
         }
     }
 }

@@ -67,7 +67,7 @@ public class SledgehammerItem extends DiggerItem {
 
         LoreHelper.addInformationLoreFirst(tooltipList, Component.translatable("ch.lore.sledgehammer.1"));
         LoreHelper.addInformationLore(tooltipList, Component.translatable("ch.lore.sledgehammer.2"));
-        LoreHelper.addControlsLoreFirst(tooltipList,  Component.translatable("ch.lore.sledgehammer.use"), LoreHelper.ControlType.USE);
+        LoreHelper.addControlsLoreFirst(tooltipList, Component.translatable("ch.lore.sledgehammer.use"), LoreHelper.ControlType.USE);
         LoreHelper.addControlsLore(tooltipList, Component.translatable("ch.lore.sledgehammer.sneak-use"), LoreHelper.ControlType.SNEAK_USE);
         LoreHelper.addControlsLore(tooltipList, Component.translatable("ch.lore.sledgehammer.release-use"), LoreHelper.ControlType.RELEASE_USE);
 
@@ -78,7 +78,16 @@ public class SledgehammerItem extends DiggerItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+
         ItemStack itemstack = player.getItemInHand(hand);
+
+        if (!SledgehammersConfig.server.chargeAbilities.get()) {
+            return new InteractionResultHolder<>(InteractionResult.PASS, itemstack);
+        }
+
+        if (!SledgehammersConfig.server.excavateAbility.get() && !SledgehammersConfig.server.veinMineAbility.get() && !SledgehammersConfig.server.fellTreeAbility.get()) {
+            return new InteractionResultHolder<>(InteractionResult.PASS, itemstack);
+        }
 
         //If the off hand has an item and the Player is not crouching, prevent charging.
         if (hand == InteractionHand.MAIN_HAND && !player.getOffhandItem().isEmpty() && !player.isCrouching()) {
@@ -109,30 +118,33 @@ public class SledgehammerItem extends DiggerItem {
 
             RayTraceHelper.BlockTrace blockTrace = RayTraceHelper.rayTraceBlock(level, player, 5);
 
-            //Checks if the ray trace hit a Block.
-            if (blockTrace != null) {
-
-                Location hit = blockTrace.getHit();
-
-                //If the Block hit was an ore or log, vein mine.
-                if (ItemTagLists.isLog(hit.getBlock()) || ItemTagLists.isOre(hit.getBlock())) {
-                    veinMine(heldStack, player, hit);
-                    return;
-                }
-
-                //Else, excavate.
-                excavateBlocks(level, heldStack, player, hit, blockTrace.getHitSide());
+            if (blockTrace == null) {
+                return;
             }
+
+            Location hit = blockTrace.getHit();
+
+            if (ItemTagLists.isLog(hit.getBlock()) && SledgehammersConfig.server.fellTreeAbility.get()) {
+                veinMine(heldStack, player, hit);
+                return;
+            }
+
+            if (ItemTagLists.isOre(hit.getBlock()) && SledgehammersConfig.server.veinMineAbility.get()) {
+                veinMine(heldStack, player, hit);
+                return;
+            }
+
+            if (SledgehammersConfig.server.excavateAbility.get()) excavateBlocks(level, heldStack, player, hit, blockTrace.getHitSide());
         }
     }
 
-    private void veinMine (ItemStack heldStack, Player player, Location startLocation) {
+    private void veinMine(ItemStack heldStack, Player player, Location startLocation) {
 
         //Checks if the starting Location can be mined.
         if (canBreakBlock(player, startLocation)) {
 
             //Start a scan of blocks that equal the starting Location's Block.
-            BlockScanner scan = new BlockScanner(startLocation, startLocation.getBlock().defaultBlockState(), SledgehammersConfig.server.maxVeinMineSize.get(), true);
+            BlockScanner scan = new BlockScanner(startLocation, startLocation.getBlock().defaultBlockState(), SledgehammersConfig.server.maxBlockBreakSize.get(), true);
             scan.startRadiusScan();
 
             LogHelper.log(SledgehammersRef.MOD_NAME, scan.buffer);
@@ -155,7 +167,7 @@ public class SledgehammerItem extends DiggerItem {
         }
     }
 
-    private void excavateBlocks (Level worldIn, ItemStack heldStack, Player player, Location location, Direction face) {
+    private void excavateBlocks(Level worldIn, ItemStack heldStack, Player player, Location location, Direction face) {
 
         int radius = EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistry.CRUSHING.get(), player) + 1;
 
@@ -181,7 +193,7 @@ public class SledgehammerItem extends DiggerItem {
         }
     }
 
-    private boolean canBreakBlock (Player player, Location location) {
+    private boolean canBreakBlock(Player player, Location location) {
         float hardness = location.getBlockState().getDestroySpeed(location.getLevel(), location.getBlockPos());
         return hardness >= 0 && hardness <= 50 && ForgeHooks.isCorrectToolForDrops(location.getBlockState(), player);
     }
@@ -202,7 +214,8 @@ public class SledgehammerItem extends DiggerItem {
     }
 
     private void damageHammer(ItemStack stack, LivingEntity livingEntity) {
-        if (stack.getItem() != ItemRegistry.STARLIGHT_SLEDGEHAMMER.get()) stack.hurtAndBreak(1, livingEntity, (i) -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        if (stack.getItem() != ItemRegistry.STARLIGHT_SLEDGEHAMMER.get())
+            stack.hurtAndBreak(1, livingEntity, (i) -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
     }
 
     @Override
@@ -211,7 +224,7 @@ public class SledgehammerItem extends DiggerItem {
     }
 
     @Override
-    public float getDestroySpeed (ItemStack stack, BlockState blockState) {
+    public float getDestroySpeed(ItemStack stack, BlockState blockState) {
         return this.speed;
     }
 
@@ -221,7 +234,7 @@ public class SledgehammerItem extends DiggerItem {
     }
 
     @Override
-    public int getUseDuration (ItemStack stack) {
+    public int getUseDuration(ItemStack stack) {
         return 72000;
     }
 
