@@ -1,3 +1,8 @@
+[v1.1.0]
+- Sledgehammers can now be trimmed in the Smithing Table.
+- Changed Sledgehammer models and textures to fit Minecraft more.
+
+
 [v1.0.1]
 - Added config options to disable certain Sledgehammer abilities.
 

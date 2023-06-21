@@ -1,0 +1,7 @@
+{
+  "parent": "sledgehammers:item/base_sledgehammer",
+  "textures": {
+    "base": "sledgehammers:item/diamond_sledgehammer",
+    "overlay": "sledgehammers:trims/items/sledgehammer_trim_dune_gold"
+  }
+}

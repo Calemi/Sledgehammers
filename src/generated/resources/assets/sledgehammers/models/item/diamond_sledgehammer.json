@@ -1,0 +1,1128 @@
+{
+  "parent": "sledgehammers:item/base_sledgehammer",
+  "overrides": [
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_quartz_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_iron_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_netherite_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_redstone_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_copper_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_gold_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_emerald_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_diamond_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_host",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_lapis_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_coast",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 1.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_dune",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 2.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_eye",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 3.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_host",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 4.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_raiser",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 5.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_rib",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 6.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_sentry",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 7.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_shaper",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 8.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_silence",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 9.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_snout",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 10.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_spire",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 11.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_tide",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 12.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_vex",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 13.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_ward",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 14.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_wayfinder",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 15.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/diamond/diamond_sledgehammer_amethyst_wild",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 16.0
+      }
+    }
+  ],
+  "textures": {
+    "base": "sledgehammers:item/diamond_sledgehammer"
+  }
+}
