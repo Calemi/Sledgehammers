@@ -1,3 +1,6 @@
+[v1.1.1]
+- Fixed crash when opening creative menu.
+
 [v1.1.0]
 - Sledgehammers can now be trimmed in the Smithing Table.
 - Changed Sledgehammer models and textures to fit Minecraft more.

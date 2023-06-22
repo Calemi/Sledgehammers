@@ -72,6 +72,10 @@ public class SledgehammerItem extends DiggerItem {
         LoreHelper.addControlsLore(tooltipList, Component.translatable("ch.lore.sledgehammer.sneak-use"), LoreHelper.ControlType.SNEAK_USE);
         LoreHelper.addControlsLore(tooltipList, Component.translatable("ch.lore.sledgehammer.release-use"), LoreHelper.ControlType.RELEASE_USE);
 
+        if (level == null) {
+            return;
+        }
+
         Optional<ArmorTrim> optionalTrim = ArmorTrim.getTrim(level.registryAccess(), stack);
 
         if (stack.isEnchanted() || optionalTrim.isPresent()) {
