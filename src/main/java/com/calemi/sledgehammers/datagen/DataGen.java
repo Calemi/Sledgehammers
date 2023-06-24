@@ -10,6 +10,7 @@ public class DataGen {
 
     @SubscribeEvent
     static void onGatherData(GatherDataEvent event) {
+        event.getGenerator().addProvider(true, new SimpleItemModelGen(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
         event.getGenerator().addProvider(true, new SledgehammerModelGen(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
     }
 }
