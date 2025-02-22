@@ -3,9 +3,9 @@ package com.calemi.sledgehammers.datagen;
 import com.calemi.sledgehammers.main.SledgehammersRef;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleItemModelGen extends ItemModelProvider {
@@ -27,7 +27,7 @@ public class SimpleItemModelGen extends ItemModelProvider {
     }
 
     private void genItemModel(String itemName) {
-        ResourceLocation location = new ResourceLocation(SledgehammersRef.MOD_ID, itemName);
+        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(SledgehammersRef.MOD_ID, itemName);
         ItemModelBuilder card = basicItem(location);
         generatedModels.put(location, card);
     }

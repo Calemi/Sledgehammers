@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "KXK",
+    " S ",
+    " S "
+  ],
+  "key": {
+
+    "S": {
+      "tag" : "c:rods/wooden"
+    },
+
+    "K": {
+      "item": "sledgehammers:stone_knob"
+    },
+
+    "X": {
+      "tag" : "minecraft:stone_tool_materials"
+    }
+  },
+  "result": {
+    "id": "sledgehammers:stone_sledgehammer",
+    "count": 1
+  }
+}

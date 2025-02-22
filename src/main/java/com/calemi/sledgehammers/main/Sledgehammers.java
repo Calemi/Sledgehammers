@@ -1,35 +1,37 @@
 package com.calemi.sledgehammers.main;
 
 import com.calemi.sledgehammers.config.SledgehammersConfig;
+import com.calemi.sledgehammers.event.RenderGuiOverlayEventListener;
 import com.calemi.sledgehammers.event.listener.BuildCreativeModeTabContentsEventListener;
-import com.calemi.sledgehammers.event.listener.RenderGuiOverlayEventListener;
 import com.calemi.sledgehammers.item.ItemTagLists;
-import com.calemi.sledgehammers.register.EnchantmentRegistry;
+import com.calemi.sledgehammers.register.ItemPropertyRegistry;
 import com.calemi.sledgehammers.register.ItemRegistry;
 import com.calemi.sledgehammers.register.LootModifierRegistry;
-import com.calemi.sledgehammers.register.ItemPropertyRegistry;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(SledgehammersRef.MOD_ID)
 public class Sledgehammers {
 
-    public static final IEventBus FORGE_EVENT_BUS = MinecraftForge.EVENT_BUS;
-    public static final IEventBus MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+    public static final IEventBus FORGE_EVENT_BUS = NeoForge.EVENT_BUS;
+    public static IEventBus MOD_EVENT_BUS;
+    public static ModContainer MOD_CONTAINER;
 
-    public Sledgehammers() {
+    public Sledgehammers(IEventBus modEventBus, ModContainer modContainer) {
 
-        MOD_EVENT_BUS.addListener(this::commonSetup);
-        MOD_EVENT_BUS.addListener(this::clientSetup);
+        MOD_EVENT_BUS = modEventBus;
+        MOD_CONTAINER = modContainer;
+
+        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
         FORGE_EVENT_BUS.register(new ItemTagLists());
 
         SledgehammersConfig.init();
         ItemRegistry.init();
-        EnchantmentRegistry.init();
         LootModifierRegistry.init();
     }
 

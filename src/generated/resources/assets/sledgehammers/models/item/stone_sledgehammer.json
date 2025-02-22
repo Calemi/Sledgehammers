@@ -114,6 +114,20 @@
       }
     },
     {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_quartz_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_quartz_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.1,
+        "sledgehammers:trim_type": 18.0
+      }
+    },
+    {
       "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_iron_coast",
       "predicate": {
         "sledgehammers:trim_material": 0.2,
@@ -223,6 +237,20 @@
       "predicate": {
         "sledgehammers:trim_material": 0.2,
         "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_iron_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_iron_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.2,
+        "sledgehammers:trim_type": 18.0
       }
     },
     {
@@ -338,6 +366,20 @@
       }
     },
     {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_netherite_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_netherite_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.3,
+        "sledgehammers:trim_type": 18.0
+      }
+    },
+    {
       "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_redstone_coast",
       "predicate": {
         "sledgehammers:trim_material": 0.4,
@@ -447,6 +489,20 @@
       "predicate": {
         "sledgehammers:trim_material": 0.4,
         "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_redstone_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_redstone_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.4,
+        "sledgehammers:trim_type": 18.0
       }
     },
     {
@@ -562,6 +618,20 @@
       }
     },
     {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_copper_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_copper_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.5,
+        "sledgehammers:trim_type": 18.0
+      }
+    },
+    {
       "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_gold_coast",
       "predicate": {
         "sledgehammers:trim_material": 0.6,
@@ -671,6 +741,20 @@
       "predicate": {
         "sledgehammers:trim_material": 0.6,
         "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_gold_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_gold_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.6,
+        "sledgehammers:trim_type": 18.0
       }
     },
     {
@@ -786,6 +870,20 @@
       }
     },
     {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_emerald_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_emerald_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.7,
+        "sledgehammers:trim_type": 18.0
+      }
+    },
+    {
       "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_diamond_coast",
       "predicate": {
         "sledgehammers:trim_material": 0.8,
@@ -895,6 +993,20 @@
       "predicate": {
         "sledgehammers:trim_material": 0.8,
         "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_diamond_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_diamond_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.8,
+        "sledgehammers:trim_type": 18.0
       }
     },
     {
@@ -1010,6 +1122,20 @@
       }
     },
     {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_lapis_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_lapis_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 0.9,
+        "sledgehammers:trim_type": 18.0
+      }
+    },
+    {
       "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_amethyst_coast",
       "predicate": {
         "sledgehammers:trim_material": 1.0,
@@ -1119,6 +1245,20 @@
       "predicate": {
         "sledgehammers:trim_material": 1.0,
         "sledgehammers:trim_type": 16.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_amethyst_flow",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 17.0
+      }
+    },
+    {
+      "model": "sledgehammers:item/sledgehammers/stone/stone_sledgehammer_amethyst_bolt",
+      "predicate": {
+        "sledgehammers:trim_material": 1.0,
+        "sledgehammers:trim_type": 18.0
       }
     }
   ],

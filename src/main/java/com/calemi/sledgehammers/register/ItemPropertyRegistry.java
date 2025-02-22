@@ -2,11 +2,13 @@ package com.calemi.sledgehammers.register;
 
 import com.calemi.sledgehammers.main.SledgehammersRef;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.armortrim.ArmorTrim;
+import net.minecraft.world.item.armortrim.*;
 import net.minecraft.world.level.Level;
 
 import java.util.Optional;
@@ -24,10 +26,10 @@ public class ItemPropertyRegistry {
     }
 
     private static void registerSledgehammerProperty(Item item) {
-        ItemProperties.register(item, new ResourceLocation(SledgehammersRef.MOD_ID, "trim_material"),
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(SledgehammersRef.MOD_ID, "trim_material"),
                 (stack, level, player, damage) -> getTrimMaterialIndex(level, stack));
 
-        ItemProperties.register(item, new ResourceLocation(SledgehammersRef.MOD_ID, "trim_type"),
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(SledgehammersRef.MOD_ID, "trim_type"),
                 (stack, level, player, damage) -> getTrimTypeIndex(level, stack));
     }
 
@@ -37,9 +39,13 @@ public class ItemPropertyRegistry {
             return 0;
         }
 
-        Optional<ArmorTrim> optionalTrim = ArmorTrim.getTrim(level.registryAccess(), stack);
-        return optionalTrim.map(armorTrim -> armorTrim.material().get().itemModelIndex()).orElse(0F);
+        ArmorTrim armorTrim = stack.getComponents().get(DataComponents.TRIM);
 
+        if (armorTrim == null) {
+            return 0;
+        }
+
+        return armorTrim.material().value().itemModelIndex();
     }
 
     private static int getTrimTypeIndex(Level level, ItemStack stack) {
@@ -48,75 +54,88 @@ public class ItemPropertyRegistry {
             return 0;
         }
 
-        Optional<ArmorTrim> optionalTrim = ArmorTrim.getTrim(level.registryAccess(), stack);
+        ArmorTrim armorTrim = stack.getComponents().get(DataComponents.TRIM);
 
-        if (optionalTrim.isPresent()) {
+        if (armorTrim == null) {
+            return 0;
+        }
 
-            Item templateItem = optionalTrim.get().pattern().get().templateItem().get();
+        ResourceKey<TrimPattern> templateItem = armorTrim.pattern().getKey();
 
-            if (templateItem.equals(Items.COAST_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 1;
-            }
+        if (templateItem == null) {
+            return 0;
+        }
 
-            if (templateItem.equals(Items.DUNE_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 2;
-            }
+        if (templateItem.equals(TrimPatterns.COAST)) {
+            return 1;
+        }
 
-            if (templateItem.equals(Items.EYE_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 3;
-            }
+        if (templateItem.equals(TrimPatterns.DUNE)) {
+            return 2;
+        }
 
-            if (templateItem.equals(Items.HOST_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 4;
-            }
+        if (templateItem.equals(TrimPatterns.EYE)) {
+            return 3;
+        }
 
-            if (templateItem.equals(Items.RAISER_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 5;
-            }
+        if (templateItem.equals(TrimPatterns.HOST)) {
+            return 4;
+        }
 
-            if (templateItem.equals(Items.RIB_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 6;
-            }
+        if (templateItem.equals(TrimPatterns.RAISER)) {
+            return 5;
+        }
 
-            if (templateItem.equals(Items.SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 7;
-            }
+        if (templateItem.equals(TrimPatterns.RIB)) {
+            return 6;
+        }
 
-            if (templateItem.equals(Items.SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 8;
-            }
+        if (templateItem.equals(TrimPatterns.SENTRY)) {
+            return 7;
+        }
 
-            if (templateItem.equals(Items.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 9;
-            }
+        if (templateItem.equals(TrimPatterns.SHAPER)) {
+            return 8;
+        }
 
-            if (templateItem.equals(Items.SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 10;
-            }
+        if (templateItem.equals(TrimPatterns.SILENCE)) {
+            return 9;
+        }
 
-            if (templateItem.equals(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 11;
-            }
+        if (templateItem.equals(TrimPatterns.SNOUT)) {
+            return 10;
+        }
 
-            if (templateItem.equals(Items.TIDE_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 12;
-            }
+        if (templateItem.equals(TrimPatterns.SPIRE)) {
+            return 11;
+        }
 
-            if (templateItem.equals(Items.VEX_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 13;
-            }
+        if (templateItem.equals(TrimPatterns.TIDE)) {
+            return 12;
+        }
 
-            if (templateItem.equals(Items.WARD_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 14;
-            }
+        if (templateItem.equals(TrimPatterns.VEX)) {
+            return 13;
+        }
 
-            if (templateItem.equals(Items.WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 15;
-            }
+        if (templateItem.equals(TrimPatterns.WARD)) {
+            return 14;
+        }
 
-            if (templateItem.equals(Items.WILD_ARMOR_TRIM_SMITHING_TEMPLATE)) {
-                return 16;
-            }
+        if (templateItem.equals(TrimPatterns.WAYFINDER)) {
+            return 15;
+        }
+
+        if (templateItem.equals(TrimPatterns.WILD)) {
+            return 16;
+        }
+
+        if (templateItem.equals(TrimPatterns.FLOW)) {
+            return 17;
+        }
+
+        if (templateItem.equals(TrimPatterns.BOLT)) {
+            return 18;
         }
 
         return 0;

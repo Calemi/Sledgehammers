@@ -18,7 +18,9 @@
                 "sledgehammers:trims/items/sledgehammer_trim_vex",
                 "sledgehammers:trims/items/sledgehammer_trim_ward",
                 "sledgehammers:trims/items/sledgehammer_trim_wayfinder",
-                "sledgehammers:trims/items/sledgehammer_trim_wild"
+                "sledgehammers:trims/items/sledgehammer_trim_wild",
+                "sledgehammers:trims/items/sledgehammer_trim_flow",
+                "sledgehammers:trims/items/sledgehammer_trim_bolt"
             ],
             "palette_key": "trims/color_palettes/trim_palette",
             "permutations": {

@@ -4,16 +4,20 @@ import com.calemi.sledgehammers.main.Sledgehammers;
 import com.calemi.sledgehammers.main.SledgehammersRef;
 import com.calemi.sledgehammers.loot.StarlightUpgradeLootModifier;
 import com.mojang.serialization.Codec;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import com.mojang.serialization.MapCodec;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+
+import java.util.function.Supplier;
 
 public class LootModifierRegistry {
 
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, SledgehammersRef.MOD_ID);
+    public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIERS =
+            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, SledgehammersRef.MOD_ID);
 
-    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> STARLIGHT_UPGRADE = LOOT_MODIFIERS.register("starlight_upgrade", StarlightUpgradeLootModifier::makeCodec);
+    public static final Supplier<MapCodec<StarlightUpgradeLootModifier>> STARLIGHT_UPGRADE  =
+            LOOT_MODIFIERS.register("starlight_upgrade", () -> StarlightUpgradeLootModifier.CODEC);
 
     public static void init() {
         LOOT_MODIFIERS.register(Sledgehammers.MOD_EVENT_BUS);

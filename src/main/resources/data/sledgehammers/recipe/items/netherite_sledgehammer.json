@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "KXK",
+    " S ",
+    " S "
+  ],
+  "key": {
+
+    "S": {
+      "tag" : "c:rods/wooden"
+    },
+
+    "K": {
+      "item": "sledgehammers:netherite_knob"
+    },
+
+    "X": {
+      "item" : "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "id": "sledgehammers:netherite_sledgehammer",
+    "count": 1
+  }
+}
