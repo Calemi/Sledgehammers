@@ -163,8 +163,11 @@ public class SledgehammerItem extends TieredItem {
                     break;
                 }
 
-                level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
                 SoundHelper.playBlockBreak(nextLocation, nextLocation.getBlockState());
+
+                if (nextLocation.equals(startLocation)) {
+                    level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
+                }
 
                 if (!level.isClientSide()) {
 
@@ -185,7 +188,6 @@ public class SledgehammerItem extends TieredItem {
     }
 
     private void excavateBlocks(Level level, ItemStack heldStack, Player player, Location startLocation, Direction face) {
-
 
         Holder<Enchantment> efficiencyHolder = level.registryAccess()
                 .registryOrThrow(Registries.ENCHANTMENT).wrapAsHolder(Objects.requireNonNull(level.registryAccess()
@@ -208,7 +210,10 @@ public class SledgehammerItem extends TieredItem {
             //Checks if the next Location can be mined.
             if (canBreakBlock(player, heldStack, nextLocation)) {
 
-                level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
+                if (nextLocation.equals(startLocation)) {
+                    level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
+                }
+
                 SoundHelper.playBlockBreak(nextLocation, nextLocation.getBlockState());
 
                 if (!level.isClientSide()) {

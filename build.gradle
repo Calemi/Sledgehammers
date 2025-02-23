@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.gradle.userdev' version '7.0.181'
+    id "me.shedaniel.unified-publishing" version "${publishing_version}"
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -59,6 +60,7 @@ configurations {
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
+    implementation "curse.maven:ccore-573646:${project.ccore_file_id}"
     runtimeOnly "curse.maven:jei-238222:${project.jei_file_id}"
 }
 
@@ -92,6 +94,42 @@ publishing {
     repositories {
         maven {
             url "file://${project.projectDir}/repo"
+        }
+    }
+}
+
+unifiedPublishing {
+    project {
+        displayName = "${mod_name} v${mod_version} [NeoForge ${minecraft_version}]"
+        releaseType = "${mod_release_type}"
+        if (rootProject.file("changelog.txt").exists()) {
+            changelog = rootProject.file("changelog.txt").text
+        }
+        gameVersions = ["${minecraft_version}", "1.21"]
+        gameLoaders = ["neoforge"]
+        mainPublication jar
+
+        var CURSE_API_KEY = project.findProperty('curseforge_apikey')
+        if (CURSE_API_KEY != null) {
+            curseforge {
+                token = CURSE_API_KEY
+                id = "${curseforge_project_id}"
+                gameVersions.addAll "Java 21"
+                relations {
+                    depends "ccore"
+                }
+            }
+        }
+
+        var MODRINTH_API_KEY = project.findProperty('modrinth_apikey')
+        if (MODRINTH_API_KEY != null) {
+            modrinth {
+                token = MODRINTH_API_KEY
+                id = "${modrinth_project_id}"
+                relations {
+                    depends "ccore"
+                }
+            }
         }
     }
 }
