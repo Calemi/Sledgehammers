@@ -23,3 +23,11 @@ type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="ccore"
+type="required"
+versionRange="[1.0.0]"
+ordering="NONE"
+side="BOTH"
+
