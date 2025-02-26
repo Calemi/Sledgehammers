@@ -1,4 +1,4 @@
-package com.calemi.sledgehammers.event;
+package com.calemi.sledgehammers.event.listener;
 
 import com.calemi.ccore.api.math.MathHelper;
 import com.calemi.sledgehammers.item.SledgehammerItem;
@@ -13,7 +13,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 
-public class RenderGuiOverlayEventListener {
+public class SledgehammerChargeHUDOverlay {
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)

@@ -1,7 +1,8 @@
 package com.calemi.sledgehammers.main;
 
 import com.calemi.sledgehammers.config.SledgehammersConfig;
-import com.calemi.sledgehammers.event.RenderGuiOverlayEventListener;
+import com.calemi.sledgehammers.event.listener.SledgehammerChargeBlockOverlay;
+import com.calemi.sledgehammers.event.listener.SledgehammerChargeHUDOverlay;
 import com.calemi.sledgehammers.event.listener.BuildCreativeModeTabContentsEventListener;
 import com.calemi.sledgehammers.item.ItemTagLists;
 import com.calemi.sledgehammers.register.ItemPropertyRegistry;
@@ -40,7 +41,9 @@ public class Sledgehammers {
     }
 
     public void clientSetup(final FMLClientSetupEvent event) {
-        FORGE_EVENT_BUS.register(new RenderGuiOverlayEventListener());
+        FORGE_EVENT_BUS.register(new SledgehammerChargeHUDOverlay());
+        FORGE_EVENT_BUS.register(new SledgehammerChargeBlockOverlay());
+
         ItemPropertyRegistry.init();
     }
 }

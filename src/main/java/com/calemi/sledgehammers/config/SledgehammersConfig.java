@@ -7,11 +7,14 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class SledgehammersConfig {
 
     private static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
+    private static final ModConfigSpec.Builder CLIENT_BUILDER = new ModConfigSpec.Builder();
 
     public static final CategoryServer server = new CategoryServer(SERVER_BUILDER);
+    public static final CategoryClient client = new CategoryClient(CLIENT_BUILDER);
 
     public static void init() {
-       Sledgehammers.MOD_CONTAINER.registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
+        Sledgehammers.MOD_CONTAINER.registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
+        Sledgehammers.MOD_CONTAINER.registerConfig(ModConfig.Type.CLIENT, CLIENT_BUILDER.build());
     }
 
     public static class CategoryServer {
@@ -59,6 +62,18 @@ public class SledgehammersConfig {
             starlightUpgradeSpawnAmount = builder.comment("Starlight Upgrade Spawn Amount")
                     .comment("The amount of Starlight Upgrade Smithing Templates appear in a chest.")
                     .defineInRange("starlightUpgradeSpawnAmount", 2, 1, 64);
+        }
+    }
+
+    public static class CategoryClient {
+
+        public final ModConfigSpec.ConfigValue<Boolean> chargeBlockOutlines;
+
+        public CategoryClient (ModConfigSpec.Builder builder) {
+
+            chargeBlockOutlines = builder.comment("Charge Block Outlines")
+                    .comment("Enables the outlines that show what blocks the Sledgehammer will mine while charging.")
+                    .define("chargeBlockOutlines", true);
         }
     }
 }
