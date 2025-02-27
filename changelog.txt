@@ -1,3 +1,6 @@
+[v1.1.1]
+- Fixed block outline compatibility issue with Sodium.
+
 [v1.1.0]
 - Added outlines to show what blocks the Sledgehammer will mine when charged.
 - Fixed bug with overflowing stacks being dropped.

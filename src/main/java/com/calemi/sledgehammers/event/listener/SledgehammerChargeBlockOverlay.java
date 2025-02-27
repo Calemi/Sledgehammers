@@ -15,7 +15,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -29,6 +28,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
+import org.joml.Matrix4f;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,6 +99,9 @@ public class SledgehammerChargeBlockOverlay {
             poseStack.pushPose();
             poseStack.translate(hitLocatiom.getX() - projectedView.x, hitLocatiom.getY() - projectedView.y, hitLocatiom.getZ() - projectedView.z);
 
+            VertexConsumer buffer = mc.renderBuffers().bufferSource().getBuffer(SledgehammerRenderTypes.LINES);
+
+
             renderBoxOutlines(outlineLocations, hitLocatiom, chargeScale, 1F, SledgehammerRenderTypes.LINES, mc, poseStack);
             renderBoxOutlines(outlineLocations, hitLocatiom, chargeScale, 0.25F, SledgehammerRenderTypes.LINES_TRANSPARENT, mc, poseStack);
 
@@ -109,6 +112,7 @@ public class SledgehammerChargeBlockOverlay {
     private void renderBoxOutlines(List<Location> outlineLocations, Location origin, float chargeScale, float alpha, RenderType lineRenderType, Minecraft mc, PoseStack poseStack) {
 
         VertexConsumer buffer = mc.renderBuffers().bufferSource().getBuffer(lineRenderType);
+        Matrix4f matrix = poseStack.last().pose();
 
         for (Location outlineLocation : outlineLocations) {
 
@@ -123,10 +127,49 @@ public class SledgehammerChargeBlockOverlay {
 
             float offset = 0.001F;
 
-            LevelRenderer.renderLineBox(poseStack, buffer,
-                    x + growOffset - offset, y + growOffset - offset, z + growOffset - offset,
-                    x - growOffset + 1 + offset, y - growOffset + 1 + offset, z - growOffset + 1 + offset,
-                    1F, 1F, 1F, chargeScale * alpha);
+            renderBox(x + growOffset - offset, y + growOffset - offset, z + growOffset - offset,
+                    x - growOffset + 1 + offset, y - growOffset + 1 + offset, z - growOffset + 1 + offset, chargeScale * alpha, buffer, matrix);
         }
+
+        mc.renderBuffers().bufferSource().endBatch(lineRenderType);
+    }
+
+    private void renderBox(float minX, float minY, float minZ, float maxX, float maxY, float maxZ, float alpha, VertexConsumer buffer, Matrix4f matrix) {
+
+        buffer.addVertex(matrix, minX, minY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, minY, minZ).setColor(1, 1, 1, alpha);;
+
+        buffer.addVertex(matrix, minX, minY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, maxY, minZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, minX, minY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, minY, maxZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, minY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, minY, minZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, minY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, maxY, maxZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, minY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, minY, maxZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, minY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, maxY, minZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, minX, minY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, maxY, maxZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, minX, maxY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, maxY, minZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, minX, maxY, minZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, maxY, maxZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, maxY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, maxX, maxY, minZ).setColor(1, 1, 1, alpha);
+
+        buffer.addVertex(matrix, maxX, maxY, maxZ).setColor(1, 1, 1, alpha);
+        buffer.addVertex(matrix, minX, maxY, maxZ).setColor(1, 1, 1, alpha);
     }
 }

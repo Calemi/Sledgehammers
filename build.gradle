@@ -62,6 +62,7 @@ dependencies {
 
     implementation "curse.maven:ccore-573646:${project.ccore_file_id}"
     runtimeOnly "curse.maven:jei-238222:${project.jei_file_id}"
+    runtimeOnly "curse.maven:sodium-394468:${project.sodium_file_id}"
 }
 
 tasks.withType(ProcessResources).configureEach {
