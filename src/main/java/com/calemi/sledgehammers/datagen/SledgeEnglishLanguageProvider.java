@@ -15,8 +15,6 @@ public class SledgeEnglishLanguageProvider extends CLanguageProvider {
 
     private final String ENCHANTMENT = getPrefixedKey("enchantment", "");
 
-    private final String CONFIG = getPrefixedKey("config", "");
-
     public SledgeEnglishLanguageProvider(PackOutput output) {
         super(SledgeRef.ID, output, "en_us");
     }
@@ -60,5 +58,20 @@ public class SledgeEnglishLanguageProvider extends CLanguageProvider {
 
         add(ENCHANTMENT + "crushing", "Crushing");
         add(ENCHANTMENT + "crushing.desc", "Increases the size of a Sledgehammer's normal charge ability.");
+
+        /*
+            CONFIG
+         */
+
+        //CLIENT
+        addAutoConfig("chargeBlockOutlines");
+        addAutoConfig("chargeHammerOverlay");
+
+        //SERVER
+        addAutoConfig("chargeAbilities");
+        addAutoConfig("excavateAbility");
+        addAutoConfig("veinMineAbility");
+        addAutoConfig("fellTreeAbility");
+        addAutoConfig("maxBlockBreakSize");
     }
 }

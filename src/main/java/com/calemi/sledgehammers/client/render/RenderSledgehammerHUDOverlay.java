@@ -1,6 +1,7 @@
 package com.calemi.sledgehammers.client.render;
 
 import com.calemi.ccore.api.math.MathHelper;
+import com.calemi.sledgehammers.config.SledgeConfig;
 import com.calemi.sledgehammers.item.SledgehammerItem;
 import com.calemi.sledgehammers.main.SledgeRef;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -18,6 +19,8 @@ public class RenderSledgehammerHUDOverlay {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void onRenderGameOverlayEvent(RenderGuiLayerEvent.Post event) {
+
+        if (!SledgeConfig.client.chargeHammerOverlay.get()) return;
 
         Minecraft mc = Minecraft.getInstance();
 

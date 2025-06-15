@@ -1,4 +1,11 @@
 {
+  "config.sledgehammers.charge_abilities": "Charge Abilities",
+  "config.sledgehammers.charge_block_outlines": "Charge Block Outlines",
+  "config.sledgehammers.charge_hammer_overlay": "Charge Hammer Overlay",
+  "config.sledgehammers.excavate_ability": "Excavate Ability",
+  "config.sledgehammers.fell_tree_ability": "Fell Tree Ability",
+  "config.sledgehammers.max_block_break_size": "Max Block Break Size",
+  "config.sledgehammers.vein_mine_ability": "Vein Mine Ability",
   "enchantment.sledgehammers.crushing": "Crushing",
   "enchantment.sledgehammers.crushing.desc": "Increases the size of a Sledgehammer's normal charge ability.",
   "hover_text.sledgehammers.sledgehammer.1": "Need a pickaxe, axe, shovel and sword in one single tool?",
