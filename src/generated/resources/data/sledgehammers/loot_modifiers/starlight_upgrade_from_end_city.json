@@ -1,0 +1,16 @@
+{
+  "type": "ccore:bonus_item",
+  "bonus_item": {
+    "count": 2,
+    "id": "sledgehammers:starlight_upgrade_smithing_template"
+  },
+  "chance": 0.2,
+  "conditions": [
+    {
+      "condition": "ccore:loot_table_check",
+      "loot_table_paths": [
+        "minecraft:chests/end_city_treasure"
+      ]
+    }
+  ]
+}

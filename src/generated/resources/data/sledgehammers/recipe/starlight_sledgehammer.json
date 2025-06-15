@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "tag": "c:rods/breeze"
+    },
+    "K": {
+      "item": "sledgehammers:starlight_knob"
+    },
+    "X": {
+      "tag": "c:gems/amethyst"
+    }
+  },
+  "pattern": [
+    "KXK",
+    " H ",
+    " H "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sledgehammers:starlight_sledgehammer"
+  }
+}

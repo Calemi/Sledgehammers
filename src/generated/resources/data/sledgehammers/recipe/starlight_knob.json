@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:nether_stars"
+  },
+  "base": {
+    "item": "sledgehammers:netherite_knob"
+  },
+  "result": {
+    "count": 1,
+    "id": "sledgehammers:starlight_knob"
+  },
+  "template": {
+    "item": "sledgehammers:starlight_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "enchantment.sledgehammers.crushing"
+  },
+  "max_cost": {
+    "base": 65,
+    "per_level_above_first": 9
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 5
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#sledgehammers:sledgehammers",
+  "weight": 3
+}

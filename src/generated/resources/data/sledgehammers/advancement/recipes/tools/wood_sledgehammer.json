@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_knob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sledgehammers:wood_knob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sledgehammers:wood_sledgehammer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_knob"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sledgehammers:wood_sledgehammer"
+    ]
+  }
+}

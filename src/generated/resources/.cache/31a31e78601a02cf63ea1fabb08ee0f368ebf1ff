@@ -1,0 +1,4 @@
+// 1.21.1	2025-06-15T13:23:43.6653162	Global Loot Modifiers : sledgehammers
+a3e30b710640f5a2bcbc415918cfc8aeaacacfb7 data/neoforge/loot_modifiers/global_loot_modifiers.json
+26dcf809313584959f0db713fdd9f980d7876bb0 data/sledgehammers/loot_modifiers/starlight_upgrade_from_ancient_city.json
+7207f10e2ecda0d015f69de34e185f0f8de19db6 data/sledgehammers/loot_modifiers/starlight_upgrade_from_end_city.json

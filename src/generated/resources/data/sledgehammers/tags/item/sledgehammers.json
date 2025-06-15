@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#sledgehammers:breakable_sledgehammers",
+      "required": false
+    },
+    "sledgehammers:starlight_sledgehammer"
+  ]
+}

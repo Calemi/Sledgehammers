@@ -77,7 +77,8 @@ tasks.withType(ProcessResources).configureEach {
             mod_license            : mod_license,
             mod_version            : mod_version,
             mod_authors            : mod_authors,
-            mod_description        : mod_description
+            mod_description        : mod_description,
+            ccore_version_range    : ccore_version_range
     ]
     inputs.properties replaceProperties
 
@@ -106,7 +107,7 @@ unifiedPublishing {
         if (rootProject.file("changelog.txt").exists()) {
             changelog = rootProject.file("changelog.txt").text
         }
-        gameVersions = ["${minecraft_version}", "1.21"]
+        gameVersions = ["${minecraft_version}"]
         gameLoaders = ["neoforge"]
         mainPublication jar
 

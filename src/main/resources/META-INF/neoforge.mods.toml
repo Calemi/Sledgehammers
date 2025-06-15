@@ -27,7 +27,7 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="ccore"
 type="required"
-versionRange="[1.0.1]"
+versionRange="${ccore_version_range}"
 ordering="NONE"
 side="BOTH"
 

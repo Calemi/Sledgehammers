@@ -1,0 +1,10 @@
+// 1.21.1	2025-06-15T13:44:12.2504062	Tags for minecraft:item mod id sledgehammers
+af6b2ddb1e2fbd711b4caf2de004e26eba6bf639 data/minecraft/tags/item/axes.json
+74ca205c0f3058126e3989615b70c757bc6705ab data/minecraft/tags/item/enchantable/durability.json
+fba9813ae2481df6be932adb30f8124e5066bddd data/minecraft/tags/item/hoes.json
+af6b2ddb1e2fbd711b4caf2de004e26eba6bf639 data/minecraft/tags/item/pickaxes.json
+af6b2ddb1e2fbd711b4caf2de004e26eba6bf639 data/minecraft/tags/item/shovels.json
+af6b2ddb1e2fbd711b4caf2de004e26eba6bf639 data/minecraft/tags/item/swords.json
+fba9813ae2481df6be932adb30f8124e5066bddd data/minecraft/tags/item/trimmable_armor.json
+eb239699568f06e9e1ea5b7e2a775c1ab7477944 data/sledgehammers/tags/item/breakable_sledgehammers.json
+c33d4920d2bdd67dea43f9607523c14359df2093 data/sledgehammers/tags/item/sledgehammers.json

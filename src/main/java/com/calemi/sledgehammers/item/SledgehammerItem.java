@@ -1,17 +1,16 @@
 package com.calemi.sledgehammers.item;
 
+import com.calemi.ccore.api.block.scanner.VeinBlockScanner;
 import com.calemi.ccore.api.item.ItemDropCollection;
-import com.calemi.ccore.api.location.Location;
-import com.calemi.ccore.api.log.LogHelper;
+import com.calemi.ccore.api.location.BlockLocation;
 import com.calemi.ccore.api.raytrace.RayTraceHelper;
-import com.calemi.ccore.api.scanner.VeinBlockScanner;
-import com.calemi.ccore.api.sound.SoundHelper;
+import com.calemi.ccore.api.shape.ShapeFlatCube;
+import com.calemi.ccore.api.sound.SoundProfile;
 import com.calemi.ccore.api.tooltip.TooltipHelper;
-import com.calemi.ccore.api.worldedit.WorldEditHelper;
-import com.calemi.ccore.api.worldedit.shape.ShapeFlatCube;
-import com.calemi.sledgehammers.config.SledgehammersConfig;
-import com.calemi.sledgehammers.main.SledgehammersRef;
-import com.calemi.sledgehammers.register.ItemRegistry;
+import com.calemi.sledgehammers.block.scanner.OreVeinBlockScanner;
+import com.calemi.sledgehammers.config.SledgeConfig;
+import com.calemi.sledgehammers.item.tier.SledgehammerTiers;
+import com.calemi.sledgehammers.main.SledgeRef;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -19,6 +18,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -33,13 +33,16 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.common.Tags;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -59,11 +62,11 @@ public class SledgehammerItem extends TieredItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 
-        TooltipHelper.addInformationLoreFirst(tooltipComponents, Component.translatable("ch.lore.sledgehammer.1"));
-        TooltipHelper.addInformationLore(tooltipComponents, Component.translatable("ch.lore.sledgehammer.2"));
-        TooltipHelper.addControlsLoreFirst(tooltipComponents, Component.translatable("ch.lore.sledgehammer.use"), TooltipHelper.ControlType.USE);
-        TooltipHelper.addControlsLore(tooltipComponents, Component.translatable("ch.lore.sledgehammer.sneak-use"), TooltipHelper.ControlType.SNEAK_USE);
-        TooltipHelper.addControlsLore(tooltipComponents, Component.translatable("ch.lore.sledgehammer.release-use"), TooltipHelper.ControlType.RELEASE_USE);
+        TooltipHelper.addInformationLoreFirst(tooltipComponents, Component.translatable("hover_text.sledgehammers.sledgehammer.1"));
+        TooltipHelper.addInformationLore(tooltipComponents, Component.translatable("hover_text.sledgehammers.sledgehammer.2"));
+        TooltipHelper.addControlsLoreFirst(tooltipComponents, Component.translatable("hover_text.sledgehammers.sledgehammer.use"), TooltipHelper.ControlType.USE);
+        TooltipHelper.addControlsLore(tooltipComponents, Component.translatable("hover_text.sledgehammers.sledgehammer.sneak-use"), TooltipHelper.ControlType.SNEAK_USE);
+        TooltipHelper.addControlsLore(tooltipComponents, Component.translatable("hover_text.sledgehammers.sledgehammer.release-use"), TooltipHelper.ControlType.RELEASE_USE);
     }
 
     @Override
@@ -80,11 +83,11 @@ public class SledgehammerItem extends TieredItem {
             return InteractionResultHolder.pass(itemstack);
         }
 
-        if (!SledgehammersConfig.server.chargeAbilities.get()) {
+        if (!SledgeConfig.server.chargeAbilities.get()) {
             return InteractionResultHolder.pass(itemstack);
         }
 
-        if (!SledgehammersConfig.server.excavateAbility.get() && !SledgehammersConfig.server.veinMineAbility.get() && !SledgehammersConfig.server.fellTreeAbility.get()) {
+        if (!SledgeConfig.server.excavateAbility.get() && !SledgeConfig.server.veinMineAbility.get() && !SledgeConfig.server.fellTreeAbility.get()) {
             return InteractionResultHolder.pass(itemstack);
         }
 
@@ -124,23 +127,23 @@ public class SledgehammerItem extends TieredItem {
                 return;
             }
 
-            Location hit = blockTrace.getHit();
+            BlockLocation hit = blockTrace.getHit();
 
-            if (ItemTagLists.isLog(hit.getBlock()) && SledgehammersConfig.server.fellTreeAbility.get()) {
-                veinMine(heldStack, player, hit);
+            if (hit.getBlockState().is(BlockTags.LOGS) && SledgeConfig.server.fellTreeAbility.get()) {
+                veinMine(heldStack, player, hit, false);
                 return;
             }
 
-            if (ItemTagLists.isOre(hit.getBlock()) && SledgehammersConfig.server.veinMineAbility.get()) {
-                veinMine(heldStack, player, hit);
+            if (hit.getBlockState().is(Tags.Blocks.ORES) && SledgeConfig.server.veinMineAbility.get()) {
+                veinMine(heldStack, player, hit, true);
                 return;
             }
 
-            if (SledgehammersConfig.server.excavateAbility.get()) excavateBlocks(level, heldStack, player, hit, blockTrace.getHitSide());
+            if (SledgeConfig.server.excavateAbility.get()) excavateBlocks(level, heldStack, player, hit, blockTrace.getHitSide());
         }
     }
 
-    private void veinMine(ItemStack heldStack, Player player, Location startLocation) {
+    private void veinMine(ItemStack heldStack, Player player, BlockLocation startLocation, boolean isOre) {
 
         //Checks if the starting Location can be mined.
         if (canBreakBlock(player, heldStack, startLocation)) {
@@ -148,37 +151,53 @@ public class SledgehammerItem extends TieredItem {
             Level level = startLocation.getLevel();
 
             //Start a scan of blocks that equal the starting Location's Block.
-            VeinBlockScanner scan = new VeinBlockScanner(startLocation, SledgehammersConfig.server.maxBlockBreakSize.get());
-            scan.start();
+            VeinBlockScanner scan;
 
-            LogHelper.log(SledgehammersRef.MOD_NAME, scan.collectedLocations);
+            if (isOre) {
+                scan = new OreVeinBlockScanner(startLocation, SledgeConfig.server.maxBlockBreakSize.get());
+            }
+
+            else {
+                scan = new VeinBlockScanner(startLocation, SledgeConfig.server.maxBlockBreakSize.get());
+            }
+
+            scan.start();
 
             ItemDropCollection dropCollection = new ItemDropCollection();
 
             //Iterate through the scanned Locations.
-            for (Location nextLocation : scan.collectedLocations) {
+            for (BlockPos nextPosition : scan.getCollectedPositions()) {
+
+                BlockLocation nextLocation = new BlockLocation(level, nextPosition);
+                BlockState nextState = nextLocation.getBlockState();
+                Block nextBlock = nextState.getBlock();
+                BlockEntity nextBlockEntity = nextLocation.getBlockEntity();
 
                 //If the Sledgehammer is broken, stop the iteration.
                 if (getDamage(heldStack) > getMaxDamage(heldStack)) {
                     break;
                 }
 
-                SoundHelper.playBlockBreak(nextLocation, nextLocation.getBlockState());
+                new SoundProfile().setEvent(nextLocation.getSoundType().getBreakSound()).setLevelAndPosition(nextLocation).play();
 
                 if (nextLocation.equals(startLocation)) {
-                    level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
+                    level.addDestroyBlockEffect(nextPosition, nextState);
                 }
 
                 if (!level.isClientSide()) {
 
-                    for (ItemStack drop : nextLocation.getBlockDropsFromBreaking(player, heldStack)) {
+                    List<ItemStack> drops = nextLocation.getBlockDropsFromBreaking(player, heldStack);
+
+                    for (ItemStack drop : drops){
                         dropCollection.addDrop(drop);
                     }
 
-                    startLocation.spawnExperience(nextLocation.getBlockExperienceFromBreaking(player, heldStack));
+                    int experienceAmount = nextLocation.getBlockExperienceFromBreaking(player, heldStack);
+
+                    nextLocation.spawnExperience(experienceAmount);
                 }
 
-                if (!level.isClientSide()) nextLocation.setBlockToAir();
+                if (!level.isClientSide()) nextLocation.setBlock(Blocks.AIR.defaultBlockState(), 3);
             }
 
             if (!player.isCreative()) {
@@ -187,45 +206,54 @@ public class SledgehammerItem extends TieredItem {
         }
     }
 
-    private void excavateBlocks(Level level, ItemStack heldStack, Player player, Location startLocation, Direction face) {
+    private void excavateBlocks(Level level, ItemStack heldStack, Player player, BlockLocation startLocation, Direction face) {
 
         Holder<Enchantment> efficiencyHolder = level.registryAccess()
                 .registryOrThrow(Registries.ENCHANTMENT).wrapAsHolder(Objects.requireNonNull(level.registryAccess()
-                        .registryOrThrow(Registries.ENCHANTMENT).get(ResourceLocation.fromNamespaceAndPath(SledgehammersRef.MOD_ID, "crushing"))));
+                        .registryOrThrow(Registries.ENCHANTMENT).get(ResourceLocation.fromNamespaceAndPath(SledgeRef.ID, "crushing"))));
 
         int radius = EnchantmentHelper.getEnchantmentLevel(efficiencyHolder, player) + 1;
 
-        ArrayList<Location> locations = WorldEditHelper.selectShape(new ShapeFlatCube(startLocation, face, radius));
+        List<BlockPos> positions = new ShapeFlatCube(face, radius).getWorldPositions(startLocation);
 
         ItemDropCollection dropCollection = new ItemDropCollection();
 
         //Iterate through the Locations from the World Edit shape.
-        for (Location nextLocation : locations) {
+        for (BlockPos nextPosition : positions) {
 
             //If the Sledgehammer is broken, stop the iteration.
             if (getDamage(heldStack) > getMaxDamage(heldStack)) {
                 break;
             }
 
+            BlockLocation nextLocation = new BlockLocation(level, nextPosition);
+            BlockState nextState = nextLocation.getBlockState();
+            Block nextBlock = nextState.getBlock();
+            BlockEntity nextBlockEntity = nextLocation.getBlockEntity();
+
             //Checks if the next Location can be mined.
             if (canBreakBlock(player, heldStack, nextLocation)) {
 
                 if (nextLocation.equals(startLocation)) {
-                    level.addDestroyBlockEffect(nextLocation.getBlockPos(), nextLocation.getBlockState());
+                    level.addDestroyBlockEffect(nextPosition, nextState);
                 }
 
-                SoundHelper.playBlockBreak(nextLocation, nextLocation.getBlockState());
+                new SoundProfile().setEvent(nextLocation.getSoundType().getBreakSound()).setLevelAndPosition(nextLocation).play();
 
                 if (!level.isClientSide()) {
 
-                    for (ItemStack drop : nextLocation.getBlockDropsFromBreaking(player, heldStack)) {
+                    List<ItemStack> drops = nextLocation.getBlockDropsFromBreaking(player, heldStack);
+
+                    for (ItemStack drop : drops){
                         dropCollection.addDrop(drop);
                     }
 
-                    startLocation.spawnExperience(nextLocation.getBlockExperienceFromBreaking(player, heldStack));
+                    int experienceAmount = nextLocation.getBlockExperienceFromBreaking(player, heldStack);
+
+                    nextLocation.spawnExperience(experienceAmount);
                 }
 
-                if (!level.isClientSide()) nextLocation.setBlockToAir();
+                if (!level.isClientSide()) nextLocation.setBlock(Blocks.AIR.defaultBlockState());
                 damageHammer(heldStack, player);
             }
         }
@@ -235,9 +263,9 @@ public class SledgehammerItem extends TieredItem {
         }
     }
 
-    private boolean canBreakBlock(Player player, ItemStack heldStack, Location location) {
+    private boolean canBreakBlock(Player player, ItemStack heldStack, BlockLocation location) {
         float hardness = location.getBlockState().getDestroySpeed(location.getLevel(), location.getBlockPos());
-        return !location.isAirBlock() && location.canHarvestBlock(player) && hardness >= 0 && hardness <= 50 && heldStack.isCorrectToolForDrops(location.getBlockState());
+        return !location.getBlock().equals(Blocks.AIR) && location.getBlockState().canHarvestBlock(location.getLevel(), location.getBlockPos(), player) && hardness >= 0 && hardness <= 50 && heldStack.isCorrectToolForDrops(location.getBlockState());
     }
 
     @Override
@@ -261,7 +289,7 @@ public class SledgehammerItem extends TieredItem {
     }
 
     private void damageHammer(ItemStack heldStack, LivingEntity livingEntity) {
-        if (heldStack.getItem() != ItemRegistry.STARLIGHT_SLEDGEHAMMER.get())
+        if (heldStack.getItem() != SledgeItems.STARLIGHT_SLEDGEHAMMER.get())
             heldStack.hurtAndBreak(1, livingEntity, EquipmentSlot.MAINHAND);
     }
 
@@ -294,6 +322,6 @@ public class SledgehammerItem extends TieredItem {
 
     @Override
     public boolean isFoil(ItemStack stack) {
-        return this == ItemRegistry.STARLIGHT_SLEDGEHAMMER.get() || stack.isEnchanted();
+        return this == SledgeItems.STARLIGHT_SLEDGEHAMMER.get() || stack.isEnchanted();
     }
 }
